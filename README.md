@@ -6,7 +6,7 @@ projectนี้ทำหน้าที่เป็น User Interface (UI) ส�
 
 ## Live Demo
 
-**https://your-vercel-app-url.vercel.app**
+**https://assignment2-five-lac.vercel.app/**
 
 ## Features
 
@@ -40,8 +40,8 @@ projectนี้มี 3 หน้าหลัก:
 ### 1. Clone Repository
 
 ```bash
-git clone <your-github-repository-url>
-cd drone2-ui
+git clone https://github.com/talay1234/Assignment2.git
+cd drone2
 ```
 
 ### 2. Install Dependencies
