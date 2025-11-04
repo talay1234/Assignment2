@@ -24,8 +24,7 @@ projectนี้มี 3 หน้าหลัก:
 3.  **Page 3: View Logs (`/logs`)**
     * แสดงผล Log ในรูปแบบ `<table>`
     * ข้อมูลจะถูกเรียงลำดับตาม `created` ล่าสุดก่อน โดยอัตโนมัติ
-
-เพิ่มเติม  **คะแนนพิเศษ: Pagination**
+    **คะแนนพิเศษ: Pagination**
     * ใน Page 3 (View Logs) ได้ทำระบบ Pagination (แบ่งหน้า) ไว้
     * ผู้ใช้สามารถกดปุ่ม "Next" และ "Previous" เพื่อโหลดข้อมูล Log ในหน้าอื่นๆ ได้ (จำกัด 12 รายการต่อหน้า)
 
@@ -57,7 +56,6 @@ npm install
 
 ```env
 # .env
-
 DRONE_ID=66011456
 
 # ใส่ URL ของ API (Assignment #1) ที่ Deploy บน Render (สำหรับใช้ฝั่ง Server-Side เช่น Layout, Page 3)
