@@ -3,11 +3,11 @@ import Link from 'next/link'
 
 export default function NavMenu() {
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-[#17506A] p-4">
       <div className="container mx-auto flex gap-6 text-white">
-        <Link href="/" className="hover:text-gray-300">Page 1: Config</Link>
-        <Link href="/form" className="hover:text-gray-300">Page 2: Log Form</Link>
-        <Link href="/logs" className="hover:text-gray-300">Page 3: View Logs</Link>
+        <Link href="/" className="hover:text-white">Page 1: Config</Link>
+        <Link href="/form" className="hover:text-white">Page 2: Log Form</Link>
+        <Link href="/logs" className="hover:text-white">Page 3: View Logs</Link>
       </div>
     </nav>
   )

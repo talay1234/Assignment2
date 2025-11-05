@@ -35,32 +35,35 @@ export default async function LogsPage({ searchParams }) {
 
   return (
     <div className="w-full">
-      <h1 className="text-2xl font-bold mb-4">View Logs</h1>
+      <h1 className="text-2xl text-[#17506A] font-bold mb-4">View Logs</h1>
       <div className="shadow border-b border-gray-200 sm:rounded-lg overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-zinc-800">
+          <thead className="bg-[#17506A]">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Created At</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Country</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Drone ID</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Drone Name</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Celsius (°C)</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Created At</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Country</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Drone ID</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Drone Name</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Celsius (°C)</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200 bg-zinc-900">
+          <tbody className="divide-y divide-gray-200">
             {logs && logs.length > 0 ? (
               logs.map((log) => (
-                <tr key={log.created}>
-                  <td className="px-6 py-4 whitespace-nowrap text-white">{new Date(log.created).toLocaleString()}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-white">{log.country}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-white">{log.drone_id}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-white">{log.drone_name}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-white">{log.celsius}</td>
+                <tr 
+                  key={log.created}
+                  className="odd:bg-[#BCE2D3] even:bg-[#76BBBF]"
+                >
+                  <td className="px-6 py-4 whitespace-nowrap text-[#267C9D]">{new Date(log.created).toLocaleString()}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-[#267C9D]">{log.country}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-[#267C9D]">{log.drone_id}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-[#267C9D]">{log.drone_name}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-[#267C9D]">{log.celsius}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="4" className="px-6 py-4 text-center text-gray-300">No logs found for this page.</td>
+                <td colSpan="4" className="px-6 py-4 text-center text-[#267C9D]">No logs found for this page.</td>
               </tr>
             )}
           </tbody>
@@ -69,8 +72,8 @@ export default async function LogsPage({ searchParams }) {
 
       <div className="flex justify-between items-center mt-6">
         <div>
-          <span className="text-sm text-gray-400">
-            Page <span className="font-medium text-white">{currentPage}</span> of <span className="font-medium text-gray-900 dark:text-white">{totalPages}</span>
+          <span className="text-sm text-[#267C9D]">
+            Page <span className="font-medium text-[#267C9D]">{currentPage}</span> of <span className="font-medium text-[#267C9D]">{totalPages}</span>
           </span>
         </div>
         <div className="flex gap-2">
@@ -78,12 +81,12 @@ export default async function LogsPage({ searchParams }) {
           {currentPage > 1 ? (
             <Link 
               href={`/logs?page=${currentPage - 1}`}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-[#2B6A6D] hover:bg-[#024D60] text-[#D8C59B] font-bold py-2 px-4 rounded"
             >
               &larr; Previous
             </Link>
           ) : (
-            <span className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">
+            <span className="bg-gray-400 text-gray-600 font-bold py-2 px-4 rounded cursor-not-allowed">
               &larr; Previous
             </span>
           )}
@@ -92,12 +95,12 @@ export default async function LogsPage({ searchParams }) {
           {currentPage < totalPages ? (
             <Link 
               href={`/logs?page=${currentPage + 1}`}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-[#2B6A6D] hover:bg-[#024D60] text-[#D8C59B] font-bold py-2 px-4 rounded"
             >
               Next &rarr;
             </Link>
           ) : (
-            <span className="bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded cursor-not-allowed">
+            <span className="bg-gray-400 text-gray-600 font-bold py-2 px-4 rounded cursor-not-allowed">
               Next &rarr;
             </span>
           )}

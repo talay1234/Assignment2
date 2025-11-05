@@ -40,11 +40,11 @@ export default function FormPage() {
 
   return (
     <div className="max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Temperature Log Form</h1>
+      <h1 className="text-2xl text-[#17506A] font-bold mb-4">Temperature Log Form</h1>
       
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form onSubmit={handleSubmit} className="bg-[#76BBBF] shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
-          <label className="block text-gray-700 text-m font-bold mb-2" htmlFor="celsius">
+          <label className="block text-[#267C9D] text-m font-bold mb-2" htmlFor="celsius">
             Input: Temperature in Celsius
           </label>
           <input
@@ -54,14 +54,14 @@ export default function FormPage() {
             value={celsius}
             onChange={(e) => setCelsius(e.target.value)}
             required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#267C9D]"
           />
         </div>
         <div className="flex items-center justify-between">
           <button 
             type="submit" 
             disabled={isLoading}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50"
+            className="bg-[#2B6A6D] hover:bg-[#024D60] text-[#D8C59B] font-bold py-2 px-4 rounded disabled:opacity-50"
           >
             {isLoading ? 'Submitting...' : 'Submit Data'}
           </button>

@@ -44,7 +44,7 @@ export default async function RootLayout({ children }) {
   const config = await getDroneConfig();
 
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#AFDCCD]">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
