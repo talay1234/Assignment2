@@ -64,7 +64,7 @@ export default function LogsPageClient() {
 
   return (
     <div className="w-full">
-      <h1 className="text-2xl text-[#17506A] font-bold mb-4">View Logs (Pagination)</h1>
+      <h1 className="text-2xl text-[#17506A] font-bold mb-4">View Logs</h1>
 
       <div className="shadow border-b border-gray-200 sm:rounded-lg overflow-x-auto">
          <table className="min-w-full divide-y divide-gray-200">
