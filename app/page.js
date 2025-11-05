@@ -10,22 +10,22 @@ export default function ConfigPage() {
 
   return (
     <div className="max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Page 1: View Config</h1>
+      <h1 className="text-2xl font-bold mb-4">View Config</h1>
       <div className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-zinc-800">
         <div className="mb-4">
-          <strong className="text-gray-300">Drone ID:</strong>
+          <strong className="text-gray-300">Drone ID: </strong>
           <span className="text-white">{config.drone_id}</span>
         </div>
         <div className="mb-4">
-          <strong className="text-gray-300">Drone Name:</strong>
+          <strong className="text-gray-300">Drone Name: </strong>
           <span className="text-white">{config.drone_name}</span>
         </div>
         <div className="mb-4">
-          <strong className="text-gray-300">Light:</strong>
+          <strong className="text-gray-300">Light: </strong>
           <span className="text-white">{config.light}</span>
         </div>
         <div className="mb-4">
-          <strong className="text-gray-300">Country:</strong>
+          <strong className="text-gray-300">Country: </strong>
           <span className="text-white">{config.country}</span>
         </div>
       </div>

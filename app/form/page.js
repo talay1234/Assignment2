@@ -40,11 +40,11 @@ export default function FormPage() {
 
   return (
     <div className="max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Page 2: Temperature Log Form</h1>
+      <h1 className="text-2xl font-bold mb-4">Temperature Log Form</h1>
       
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="celsius">
+          <label className="block text-gray-700 text-m font-bold mb-2" htmlFor="celsius">
             Input: Temperature in Celsius
           </label>
           <input
