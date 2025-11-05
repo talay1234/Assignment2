@@ -8,11 +8,15 @@ async function getLogs(page = 1) {
   const API_URL = process.env.API_URL
   
   try {
-    // ส่ง page และ perPage (จำกัด 12 ตามโจทย์) ไปหา API
+    // 1. สร้างตัวเลขสุ่ม (คือเวลาปัจจุบัน)
+    const timestamp = new Date().getTime();
+
+    // 2. ส่ง page, perPage, และตัวเลขสุ่ม (_t) ไปด้วย
     const res = await axios.get(`${API_URL}/logs/${DRONE_ID}`, {
       params: {
         page: page,
-        perPage: 12 
+        perPage: 12,
+        _t: timestamp
       }
     })
     // API (Assignment #1) คืนค่า object { items, totalPages, ... }
