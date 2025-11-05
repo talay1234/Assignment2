@@ -1,6 +1,8 @@
 import axios from 'axios'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic';
+
 async function getLogs(page = 1) {
   const DRONE_ID = process.env.DRONE_ID
   const API_URL = process.env.API_URL
