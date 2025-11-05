@@ -36,14 +36,15 @@ export default async function LogsPage({ searchParams }) {
   return (
     <div className="w-full">
       <h1 className="text-2xl font-bold mb-4">Page 3: View Logs (Extra Credit: Pagination)</h1>
-      <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+      <div className="shadow border-b border-gray-200 sm:rounded-lg overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50 dark:bg-zinc-800">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Created At</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Drone Name</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Country</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase">Temp (°C)</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Created At</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Country</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Drone ID</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Drone Name</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Celsius (°C)</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200 dark:bg-zinc-900">
@@ -51,8 +52,9 @@ export default async function LogsPage({ searchParams }) {
               logs.map((log) => (
                 <tr key={log.created}>
                   <td className="px-6 py-4 whitespace-nowrap dark:text-white">{new Date(log.created).toLocaleString()}</td>
-                  <td className="px-6 py-4 whitespace-nowrap dark:text-white">{log.drone_name}</td>
                   <td className="px-6 py-4 whitespace-nowrap dark:text-white">{log.country}</td>
+                  <td className="px-6 py-4 whitespace-nowrap dark:text-white">{log.drone_id}</td>
+                  <td className="px-6 py-4 whitespace-nowrap dark:text-white">{log.drone_name}</td>
                   <td className="px-6 py-4 whitespace-nowrap dark:text-white">{log.celsius}</td>
                 </tr>
               ))
