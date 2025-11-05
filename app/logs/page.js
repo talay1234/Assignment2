@@ -35,32 +35,32 @@ export default async function LogsPage({ searchParams }) {
 
   return (
     <div className="w-full">
-      <h1 className="text-2xl font-bold mb-4">Page 3: View Logs (Extra Credit: Pagination)</h1>
+      <h1 className="text-2xl font-bold mb-4">Page 3: View Logs</h1>
       <div className="shadow border-b border-gray-200 sm:rounded-lg overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50 dark:bg-zinc-800">
+          <thead className="bg-zinc-800">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Created At</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Country</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Drone ID</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Drone Name</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase whitespace-nowrap">Celsius (°C)</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Created At</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Country</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Drone ID</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Drone Name</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase whitespace-nowrap">Celsius (°C)</th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200 dark:bg-zinc-900">
+          <tbody className="divide-y divide-gray-200 bg-zinc-900">
             {logs && logs.length > 0 ? (
               logs.map((log) => (
                 <tr key={log.created}>
-                  <td className="px-6 py-4 whitespace-nowrap dark:text-white">{new Date(log.created).toLocaleString()}</td>
-                  <td className="px-6 py-4 whitespace-nowrap dark:text-white">{log.country}</td>
-                  <td className="px-6 py-4 whitespace-nowrap dark:text-white">{log.drone_id}</td>
-                  <td className="px-6 py-4 whitespace-nowrap dark:text-white">{log.drone_name}</td>
-                  <td className="px-6 py-4 whitespace-nowrap dark:text-white">{log.celsius}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-white">{new Date(log.created).toLocaleString()}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-white">{log.country}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-white">{log.drone_id}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-white">{log.drone_name}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-white">{log.celsius}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="4" className="px-6 py-4 text-center text-gray-500 dark:text-gray-300">No logs found for this page.</td>
+                <td colSpan="4" className="px-6 py-4 text-center text-gray-300">No logs found for this page.</td>
               </tr>
             )}
           </tbody>
@@ -69,8 +69,8 @@ export default async function LogsPage({ searchParams }) {
 
       <div className="flex justify-between items-center mt-6">
         <div>
-          <span className="text-sm text-gray-700 dark:text-gray-400">
-            Page <span className="font-medium text-gray-900 dark:text-white">{currentPage}</span> of <span className="font-medium text-gray-900 dark:text-white">{totalPages}</span>
+          <span className="text-sm text-gray-400">
+            Page <span className="font-medium text-white">{currentPage}</span> of <span className="font-medium text-gray-900 dark:text-white">{totalPages}</span>
           </span>
         </div>
         <div className="flex gap-2">
