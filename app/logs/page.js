@@ -3,8 +3,13 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useConfig } from '../context/ConfigContext'
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 
 export default function LogsPage() {
+  const router = useRouter()       // สำหรับ "เปลี่ยน" URL
+  const pathname = usePathname()   // สำหรับ "อ่าน" Path ปัจจุบัน (เช่น /logs)
+  const searchParams = useSearchParams() // สำหรับ "อ่าน" ?page=...
+  const initialPage = parseInt(searchParams.get('page') || '1', 10)
   const [logs, setLogs] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
@@ -49,12 +54,20 @@ export default function LogsPage() {
     fetchLogs()
   }, [currentPage, config]) // trigger
 
-  // (Render) แสดงผลตามสถานะ
-  if (error) {
-    return <div className="text-red-500 font-bold">{error}</div>
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage)
+
+    const params = new URLSearchParams(searchParams)
+    params.set('page', newPage.toString())
+    router.push(`${pathname}?${params.toString()}`)
   }
 
-  if (loading) {
+  // (Render) แสดงผลตามสถานะ
+  if (error) {
+    return <div className="text-[#DC493F] font-bold">{error}</div>
+  }
+
+  if (loading && logs.length === 0) {
     return <div>Loading logs...</div>
   }
 
@@ -64,13 +77,13 @@ export default function LogsPage() {
       
       <div className="shadow border-b border-gray-200 sm:rounded-lg overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-[#BCE2D3]">
+            <thead className="bg-[#17506A]">
                 <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-[#17506A] uppercase whitespace-nowrap">Created At</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-[#17506A] uppercase whitespace-nowrap">Country</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-[#17506A] uppercase whitespace-nowrap">Drone ID</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-[#17506A] uppercase whitespace-nowrap">Drone Name</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-[#17506A] uppercase whitespace-nowrap">Temp (°C)</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Created At</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Country</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Drone ID</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Drone Name</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Temp (°C)</th>
                 </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
@@ -105,7 +118,7 @@ export default function LogsPage() {
         <div className="flex gap-2">
           {/* ปุ่ม Previous */}
           <button 
-            onClick={() => setCurrentPage(currentPage - 1)}
+            onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage <= 1 || loading}
             className="bg-[#2B6A6D] hover:bg-[#024D60] text-[#D8C59B] font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed"
           >
@@ -114,7 +127,7 @@ export default function LogsPage() {
 
           {/* ปุ่ม Next */}
           <button 
-            onClick={() => setCurrentPage(currentPage + 1)}
+            onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage >= totalPages || loading}
             className="bg-[#2B6A6D] hover:bg-[#024D60] text-[#D8C59B] font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed"
           >
