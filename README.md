@@ -41,7 +41,7 @@ projectนี้มี 3 หน้าหลัก:
 
 ```bash
 git clone https://github.com/talay1234/Assignment2.git
-cd drone2
+cd Assignment2
 ```
 
 ### 2. Install Dependencies
