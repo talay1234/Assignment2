@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import LogsPageClient from './logsPageClient'
+import LogsPageClient from './LogsPageClient'
 
 export default function LogsPage() {
   return (
