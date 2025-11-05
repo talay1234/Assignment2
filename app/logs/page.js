@@ -40,11 +40,11 @@ export default async function LogsPage({ searchParams }) {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-[#17506A]">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Created At</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Country</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Drone ID</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Drone Name</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-[#267C9D] uppercase whitespace-nowrap">Celsius (°C)</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Created At</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Country</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Drone ID</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Drone Name</th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase whitespace-nowrap">Celsius (°C)</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
