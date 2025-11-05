@@ -9,7 +9,7 @@ export default function ConfigPage() {
   }
 
   return (
-    <div className="max-w-md">
+    <div className="max-w-md mx-auto">
       <h1 className="text-2xl font-bold mb-4">Page 1: View Config</h1>
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 dark:bg-zinc-800">
         <div className="mb-4">
