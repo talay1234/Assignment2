@@ -14,19 +14,19 @@ export default function ConfigPage() {
       <div className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-[#76BBBF]">
         <div className="mb-4">
           <strong className="text-[#267C9D]">Drone ID: </strong>
-          <span className="text-gray-100">{config.drone_id}</span>
+          <span className="text-gray-50">{config.drone_id}</span>
         </div>
         <div className="mb-4">
           <strong className="text-[#267C9D]">Drone Name: </strong>
-          <span className="text-gray-100">{config.drone_name}</span>
+          <span className="text-gray-50">{config.drone_name}</span>
         </div>
         <div className="mb-4">
           <strong className="text-[#267C9D]">Light: </strong>
-          <span className="text-gray-100">{config.light}</span>
+          <span className="text-gray-50">{config.light}</span>
         </div>
         <div className="mb-4">
           <strong className="text-[#267C9D]">Country: </strong>
-          <span className="text-gray-100">{config.country}</span>
+          <span className="text-gray-50">{config.country}</span>
         </div>
       </div>
     </div>

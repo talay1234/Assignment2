@@ -54,7 +54,7 @@ export default function FormPage() {
             value={celsius}
             onChange={(e) => setCelsius(e.target.value)}
             required
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#267C9D] bg-white border-[#024D60] focus:outline-none focus:ring-2 focus:ring-[#2B6A6D]"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-[#267C9D] bg-[#BCE2D3] border-[#024D60] focus:outline-none focus:ring-2 focus:ring-[#2B6A6D]"
           />
         </div>
         <div className="flex items-center justify-between">
@@ -68,7 +68,7 @@ export default function FormPage() {
         </div>
       </form>
 
-      {message && <p className={message.startsWith('Error') ? 'text-red-500' : 'text-[#17506A]'}>{message}</p>}
+      {message && <p className={message.startsWith('Error') ? 'text-[#DC493F]' : 'text-[#267C9D]'}>{message}</p>}
     </div>
   )
 }

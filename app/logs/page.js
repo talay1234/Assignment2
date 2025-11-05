@@ -54,7 +54,7 @@ export default async function LogsPage({ searchParams }) {
               logs.map((log) => (
                 <tr 
                   key={log.created}
-                  className="odd:bg-[#BCE2D3] even:bg-[#76BBBF]"
+                  className="odd:bg-[#BCE2D3] even:bg-[#76BBC0]"
                 >
                   <td className="px-6 py-4 whitespace-nowrap text-[#267C9D]">{new Date(log.created).toLocaleString()}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-[#267C9D]">{log.country}</td>
